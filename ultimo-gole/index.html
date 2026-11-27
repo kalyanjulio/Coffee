@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Último Gole — Café da noite, passado na hora</title>
+<meta name="description" content="Café descafeinado da fazenda para dormir melhor, com Escuta Noturna durante a noite toda.">
+<link id="favicon" rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='16' fill='%23e63946'/><g fill='%23f1faee'><circle cx='16' cy='8' r='3.5'/><circle cx='24' cy='16' r='3.5'/><circle cx='16' cy='24' r='3.5'/><circle cx='8' cy='16' r='3.5'/><circle cx='16' cy='16' r='2'/></g></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Bebas+Neue&family=Courier+Prime:wght@400;700&family=Libre+Franklin:wght@400;600;800&family=Reenie+Beanie&family=Shrikhand&family=Yellowtail&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="nav" id="nav" data-tone="light">
+  <a class="logo" href="#top">
+    <svg class="reel-icon" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="16"/><g><circle cx="16" cy="8" r="3.5"/><circle cx="24" cy="16" r="3.5"/><circle cx="16" cy="24" r="3.5"/><circle cx="8" cy="16" r="3.5"/><circle cx="16" cy="16" r="2"/></g></svg>
+    <span id="wordmark">Último Gole</span>
+  </a>
+  <p class="reel-name" id="reelName" aria-hidden="true">Rolo 1 · 1918</p>
+  <nav aria-label="Principal">
+    <a href="#features">A fazenda</a>
+    <a href="#stories">Relatos</a>
+    <a href="#pricing">Ingressos</a>
+    <a href="#faq">Roteiro</a>
+  </nav>
+  <a class="btn btn-small" id="navCta" href="#pricing">Provar</a>
+  <i class="progress" id="progress" aria-hidden="true"></i>
+</header>
+
+<button class="sound" id="soundToggle" type="button" aria-pressed="false">
+  <span class="sound-bars" aria-hidden="true"><i></i><i></i><i></i></span>
+  <span id="soundLabel">Som desligado</span>
+</button>
+
+<main>
+
+<!-- ════ ROLO 1 · 1918 ════ -->
+
+<!-- 0 · CARTAZ -->
+<section class="hero" id="top" data-dread="0" data-tone="light" data-reel="Rolo 1 · 1918">
+  <div class="poster-top">
+    <p class="presents rise" style="--d:0ms"><span>A Fazenda Boa Noite apresenta</span></p>
+    <p class="title" aria-label="Último Gole">
+      <span aria-hidden="true"><i style="--i:0">Ú</i><i style="--i:1">l</i><i style="--i:2">t</i><i style="--i:3">i</i><i style="--i:4">m</i><i style="--i:5">o</i></span>
+      <span aria-hidden="true"><i style="--i:6">G</i><i style="--i:7">o</i><i style="--i:8">l</i><i style="--i:9">e</i></span>
+    </p>
+  </div>
+
+  <div class="stage" id="stage">
+    <svg class="farm" viewBox="0 0 1600 600" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+      <g class="layer" data-depth="0.55">
+        <g class="rays"><path d="M800 330 520-120h110ZM800 330 760-160h90ZM800 330 1000-120h110ZM800 330 1300 0v110ZM800 330 300 0v110ZM800 330 1500 240v90ZM800 330 100 240v90Z"/></g>
+        <circle class="sun" cx="800" cy="330" r="190"/>
+      </g>
+      <g class="layer" data-depth="0.45">
+        <g class="cloud c1"><path d="M330 220q10-34 48-28 14-34 52-24 36-6 44 24 40-4 44 28Z"/></g>
+        <g class="cloud c2"><path d="M1130 180q8-28 40-22 14-30 46-18 30-2 36 22 30 0 34 18Z"/></g>
+      </g>
+      <g class="layer" data-depth="0.32">
+        <path class="hill-far" d="M-100 420Q180 300 470 380T980 350t720 10v300H-100Z"/>
+        <g class="mill">
+          <path class="mill-body" d="M1052 450 1068 292h24l16 158Z"/>
+          <g class="blades"><path d="M1080 292 1070 200h20ZM1080 292l92-10v20ZM1080 292l10 92h-20ZM1080 292l-92 10v-20Z"/><circle cx="1080" cy="292" r="10"/></g>
+        </g>
+      </g>
+      <g class="layer" data-depth="0.2">
+        <g class="barn">
+          <path class="barn-body" d="M452 480V360l30-50 55-26 55 26 30 50v120Z"/>
+          <path class="barn-roof" d="m440 368 34-62 63-30 63 30 34 62-18 6-28-52-51-24-51 24-28 52Z"/>
+          <rect class="barn-window" x="517" y="326" width="40" height="38"/>
+          <g class="watcher"><path d="M525 364c0-14 5-20 9-22a9 9 0 1 1 6 0c4 2 9 8 9 22Z"/><path class="grin" d="M532 334q5 6 10 0"/></g>
+          <path class="barn-door" d="M505 480v-70h64v70M505 410l64 70M569 410l-64 70"/>
+        </g>
+        <path class="hill-mid" d="M-100 486Q220 416 560 468t540-8 600-6v200H-100Z"/>
+      </g>
+      <g class="layer" data-depth="0.08">
+        <path class="hill-near" d="M-100 545q360-60 720-18t980-24v200H-100Z"/>
+        <g class="rows"><path d="M-40 590q300-70 620-36M60 640q380-110 760-50M900 560q320 20 760-40M1000 604q300-10 640-60"/></g>
+      </g>
+    </svg>
+
+    <div class="tin-wrap">
+      <svg class="steam" viewBox="0 0 120 90" aria-hidden="true"><path d="M30 82c-16-18 14-28-2-52"/><path d="M62 82c-18-20 16-34-2-66"/><path d="M94 82c-16-18 14-28-2-52"/></svg>
+      <div class="tin" id="heroTin">
+        <div class="lid" aria-hidden="true"></div>
+        <div class="can">
+          <div class="can-label">
+            <p class="can-brand">Último Gole</p>
+            <h2 id="canTitle">Café da noite</h2>
+            <p class="can-for">Torrado para <b class="name" data-fallback="quem tem sono leve"></b></p>
+            <dl class="facts">
+              <div><dt>Nota do sono</dt><dd id="factScore">92 de 100</dd></div>
+              <div><dt id="factDurLabel">Tempo dormindo</dt><dd id="factDur">7h 48min</dd></div>
+              <div><dt>Gravações</dt><dd id="factRec">2</dd></div>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="billing">
+    <div class="wrap billing-grid">
+      <h1 class="rise" style="--d:350ms" id="heroTitle">Durma melhor, passado na hora.</h1>
+      <div class="rise" style="--d:420ms">
+        <p class="lede" id="heroLede">Café descafeinado da fazenda, torrado devagar. Passe uma xícara, deite e deixe a Escuta Noturna cuidar da sua noite.</p>
+        <div class="actions">
+          <a class="btn" href="#pricing">Comprar ingresso</a>
+          <button class="btn btn-line" type="button" id="previewSound">
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.5v11l9-5.5z" fill="currentColor"/></svg>
+            <span>Ouvir a trilha do filme</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <ul class="laurels wrap" aria-label="Saiu na mídia">
+      <li><b>★★★★★</b><span>4,8 de 40 mil<br>dorminhocos</span></li>
+      <li><b>“Um sonho”</b><span>Manhã Leve</span></li>
+      <li><b>“Dormi”</b><span>Diário do Descanso</span></li>
+      <li><b>“Quentinho”</b><span>Moagem FM</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- 1 · O FILME DA FAZENDA -->
+<section class="features" id="features" data-dread="0.02" data-tone="dark" data-reel="Rolo 1 · 1918">
+  <div class="strip-stick">
+    <div class="strip">
+      <div class="track" id="track">
+        <article class="frame frame-title">
+          <p class="kicker">Um filme em três cuidados</p>
+          <h2>Do pé<br>à xícara</h2>
+          <p class="hint">continue descendo →</p>
+        </article>
+        <article class="frame">
+          <svg class="plate" viewBox="0 0 320 190" aria-hidden="true">
+            <rect width="320" height="190" fill="#a8dadc"/><circle cx="250" cy="56" r="30" fill="#f1faee"/>
+            <path d="M0 140q90-50 180-14t140-22v86H0Z" fill="#457b9d"/>
+            <g class="branch"><path d="M-8 42C70 40 150 74 214 128" fill="none" stroke="#1d3557" stroke-width="7" stroke-linecap="round"/>
+              <g fill="#1d3557"><path d="M52 50q18-42 62-30-14 38-62 30ZM96 66q-4 44-44 50-4-40 44-50ZM132 84q34-32 70-6-30 30-70 6ZM168 100q8 42-30 62-16-40 30-62Z"/></g>
+              <g fill="#e63946"><circle cx="76" cy="60" r="11"/><circle cx="92" cy="72" r="9"/><circle cx="140" cy="92" r="11"/><circle cx="152" cy="108" r="9"/><circle cx="200" cy="122" r="11"/><circle cx="214" cy="134" r="8"/></g></g>
+          </svg>
+          <h3>Colhido na fazenda</h3>
+          <p>Grão por grão, longe da cidade. Aqui não chega barulho, nem sinal, nem vizinho.</p>
+        </article>
+        <article class="frame">
+          <svg class="plate" viewBox="0 0 320 190" aria-hidden="true">
+            <rect width="320" height="190" fill="#e63946"/>
+            <path d="M60 190V150h200v40Z" fill="#1d3557"/>
+            <g class="flame" fill="#f1faee"><path d="M110 150q-16-18 0-34 2 14 12 16 8 10-12 18ZM160 150q-22-24 2-44 0 18 14 22 10 14-16 22ZM210 150q-16-18 0-34 2 14 12 16 8 10-12 18Z"/></g>
+            <circle cx="160" cy="72" r="54" fill="#1d3557"/>
+            <g class="drum"><circle cx="160" cy="72" r="42" fill="#a8dadc"/><g fill="#1d3557"><ellipse cx="142" cy="60" rx="8" ry="11" transform="rotate(30 142 60)"/><ellipse cx="178" cy="54" rx="8" ry="11" transform="rotate(-40 178 54)"/><ellipse cx="172" cy="92" rx="8" ry="11" transform="rotate(70 172 92)"/><ellipse cx="138" cy="90" rx="8" ry="11" transform="rotate(-15 138 90)"/><ellipse cx="162" cy="72" rx="7" ry="10" transform="rotate(10 162 72)"/></g></g>
+          </svg>
+          <h3>Torrado sem cafeína</h3>
+          <p>Torra lenta, no fogão de lenha. Você bebe quentinho, na cama, e não perde um minuto de sono.</p>
+        </article>
+        <article class="frame">
+          <svg class="plate" viewBox="0 0 320 190" aria-hidden="true">
+            <rect width="320" height="190" fill="#1d3557"/><circle cx="62" cy="48" r="22" fill="#f1faee"/><circle cx="73" cy="41" r="20" fill="#1d3557"/>
+            <rect x="120" y="30" width="80" height="140" rx="12" fill="#f1faee"/><rect x="128" y="42" width="64" height="110" rx="4" fill="#457b9d"/>
+            <g class="wave-bars" fill="#f1faee"><rect x="136" y="84" width="6" height="26" rx="3"/><rect x="148" y="72" width="6" height="50" rx="3"/><rect x="160" y="62" width="6" height="70" rx="3"/><rect x="172" y="76" width="6" height="42" rx="3"/><rect x="184" y="86" width="6" height="22" rx="3"/></g>
+            <circle class="rec-dot" cx="160" cy="161" r="4" fill="#e63946"/>
+            <g class="peeker" fill="#f1faee"><circle cx="272" cy="118" r="3"/><circle cx="288" cy="118" r="3"/></g>
+          </svg>
+          <h3>Escuta Noturna</h3>
+          <p>Seu celular fica acordado para você não precisar. Ele percebe ronco, conversa e o que você nunca ouviria.</p>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 2 · A ESTRELA -->
+<section class="hostess" data-dread="0.05" data-tone="light" data-reel="Rolo 1 · 1918">
+  <div class="wrap hostess-col">
+    <p class="kicker reveal">Estrelando</p>
+    <h2 class="reveal">Dona Cida</h2>
+    <figure class="portrait reveal" id="portrait">
+      <svg viewBox="0 0 320 380" role="img" aria-label="Retrato ilustrado de Dona Cida, de cabelo branco, laço e vestido vermelhos e um grande sorriso">
+        <defs><clipPath id="oval"><ellipse cx="160" cy="190" rx="134" ry="166"/></clipPath></defs>
+        <g clip-path="url(#oval)">
+          <rect width="320" height="380" fill="#a8dadc"/>
+          <g class="portrait-rays" fill="#f1faee" opacity=".55"><path d="M160 190 20-40h70ZM160 190 140-60h70ZM160 190 270-40h70ZM160 190 400 90v70ZM160 190 400 280v70ZM160 190-80 90v70ZM160 190-80 280v70ZM160 190 60 440h70ZM160 190 230 440h70Z"/></g>
+          <path d="M40 390c6-92 56-122 120-122s114 30 120 122Z" fill="#e63946"/>
+          <path d="M122 256q38 44 76 0l-14-12h-48Z" fill="#f1faee"/>
+          <rect x="140" y="224" width="40" height="40" rx="16" fill="#e5ab88"/>
+          <circle cx="160" cy="78" r="34" fill="#e9e6da"/>
+          <path d="M82 178c-6-62 28-94 78-94s84 32 78 94l-14 40H96Z" fill="#e9e6da"/>
+          <ellipse cx="160" cy="174" rx="62" ry="72" fill="#f2c4a3"/>
+          <path d="M98 152c10-40 36-54 62-54s52 14 62 54c-26-4-46-14-62-32-16 18-36 28-62 32Z" fill="#f7f5ec"/>
+          <path d="M150 82c-22-26-52-10-34 8 8 8 24 4 34-8Zm20 0c22-26 52-10 34 8-8 8-24 4-34-8Z" fill="#e63946"/>
+          <circle cx="160" cy="82" r="9" fill="#a81f30"/>
+          <ellipse cx="119" cy="196" rx="13" ry="9" fill="#e63946" opacity=".45"/>
+          <ellipse cx="201" cy="196" rx="13" ry="9" fill="#e63946" opacity=".45"/>
+          <g class="eye-whites" fill="#f7f5ec"><circle cx="135" cy="167" r="11"/><circle cx="185" cy="167" r="11"/></g>
+          <g class="pupils" fill="#1d3557"><circle cx="135" cy="167" r="4.5"/><circle cx="185" cy="167" r="4.5"/></g>
+          <g fill="none" stroke="#1d3557" stroke-width="3"><circle cx="135" cy="167" r="19"/><circle cx="185" cy="167" r="19"/><path d="M154 165q6-5 12 0"/></g>
+          <path d="M160 176l-6 18q6 4 12 0" fill="none" stroke="#c97c5f" stroke-width="3" stroke-linecap="round"/>
+          <path class="mouth-soft" d="M137 208q23 19 46 0" fill="none" stroke="#c1121f" stroke-width="7" stroke-linecap="round"/>
+          <g class="mouth-wide">
+            <path d="M112 198q48 14 96 0-8 42-48 42t-48-42Z" fill="#f7f5ec" stroke="#c1121f" stroke-width="6" stroke-linejoin="round"/>
+            <path d="M117 213q43 13 86 0M126 203v23M138 206v28M150 207v31M160 207v31M170 207v31M182 206v28M194 203v23" fill="none" stroke="#1d3557" stroke-width="1.6" opacity=".75"/>
+          </g>
+          <path class="tear" d="M126 178c-2 18-6 34-2 50" fill="none" stroke="#1d3557" stroke-width="4" stroke-linecap="round"/>
+          <g><path d="M232 300c34-4 34 40-2 38" fill="none" stroke="#f1faee" stroke-width="10" stroke-linecap="round"/><path d="M170 286h66v48c0 13-9 20-19 20h-28c-10 0-19-7-19-20Z" fill="#f1faee"/><rect x="170" y="306" width="66" height="13" fill="#457b9d"/></g>
+          <ellipse cx="172" cy="326" rx="13" ry="10" fill="#f2c4a3"/>
+        </g>
+        <ellipse cx="160" cy="190" rx="136" ry="168" fill="none" stroke="#e63946" stroke-width="9"/>
+        <ellipse cx="160" cy="190" rx="150" ry="182" fill="none" stroke="#1d3557" stroke-width="2"/>
+        <ellipse class="beads" cx="160" cy="190" rx="143" ry="175" fill="none" stroke="#1d3557" stroke-width="5" stroke-linecap="round" stroke-dasharray="0 14"/>
+      </svg>
+    </figure>
+    <blockquote class="intertitle reveal">
+      <p id="cidaSays">“Faço cada lata como se fosse para um filho. Um dia ainda levo a xícara aí.”</p>
+      <cite>— Dona Cida, dona da fazenda</cite>
+    </blockquote>
+    <form id="nameForm" class="reveal" autocomplete="off">
+      <label for="nameInput">Que nome ela escreve na sua lata?</label>
+      <div>
+        <input id="nameInput" type="text" maxlength="20" placeholder="Seu primeiro nome">
+        <button class="btn" type="submit">Escrever</button>
+      </div>
+    </form>
+    <p class="note" id="nameNote" aria-live="polite">Opcional. Fica só nesta página e não é enviado para lugar nenhum.</p>
+  </div>
+</section>
+
+<!-- 3 · LETREIRO -->
+<section class="stats" data-dread="0.12" data-tone="light" data-reel="Rolo 1 · 1918">
+  <div class="wrap">
+    <div class="marquee reveal">
+      <i class="bulbs" aria-hidden="true"></i>
+      <div class="board">
+        <h2>Em cartaz</h2>
+        <dl>
+          <div><dt>Xícaras servidas na cama</dt><dd data-count="2.4" data-suffix=" mi">2,4 mi</dd></div>
+          <div><dt>Mais rápido para pegar no sono</dt><dd data-count="11" data-suffix=" min">11 min</dd></div>
+          <div><dt>Assinantes que acordam descansados<sup>*</sup></dt><dd data-count="94" data-suffix="%">94%</dd></div>
+          <div class="odd"><dt>Média de xícaras usadas por noite por quem mora só</dt><dd data-count="2" data-suffix="">2</dd></div>
+        </dl>
+        <p class="footnote">*Entre os que acordaram.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ ROLO 2 · 1979 ════ -->
+<section class="reelcard seventies" data-dread="0.2" data-tone="dark" data-reel="Rolo 2 · 1979">
+  <div class="card-in">
+    <div class="leader" aria-hidden="true"><b>2</b></div>
+    <p class="reel-kicker">Rolo dois · 1979</p>
+    <p class="reel-title">Os hóspedes</p>
+  </div>
+</section>
+
+<!-- 4 · RELATOS -->
+<section class="stories" id="stories" data-dread="0.25" data-tone="light" data-reel="Rolo 2 · 1979">
+  <div class="stripes" aria-hidden="true"></div>
+  <div class="wrap">
+    <h2 class="reveal">Amado por quem tem sono leve</h2>
+    <div class="quotes">
+      <figure class="quote reveal">
+        <svg viewBox="0 0 120 90"><rect width="120" height="90" fill="#a8dadc"/><path d="M0 70q40-22 70-6t50-10v36H0Z" fill="#457b9d"/><circle cx="60" cy="48" r="24" fill="#f2c4a3"/><path d="M36 44q4-26 26-24t22 24q-12-4-20-12-12 12-28 12Z" fill="#1d3557"/><circle cx="52" cy="48" r="2.6"/><circle cx="68" cy="48" r="2.6"/><path d="M51 58q9 8 18 0" fill="none" stroke="#c1121f" stroke-width="2.5" stroke-linecap="round"/></svg>
+        <blockquote>Tomo a xícara e nem vejo o fim da chuva no telhado.</blockquote>
+        <figcaption><b>Priscila R.</b> hóspede há 8 meses</figcaption>
+      </figure>
+      <figure class="quote reveal">
+        <svg viewBox="0 0 120 90"><rect width="120" height="90" fill="#e63946"/><circle cx="60" cy="50" r="24" fill="#d99b76"/><path d="M34 40h52l-6-12-10-10H50L40 28Z" fill="#1d3557"/><rect x="26" y="38" width="68" height="6" rx="3" fill="#1d3557"/><circle cx="52" cy="52" r="2.6"/><circle cx="68" cy="52" r="2.6"/><path d="M52 63q8 6 16 0" fill="none" stroke="#1d3557" stroke-width="2.5" stroke-linecap="round"/></svg>
+        <blockquote>O cheiro é tão bom que parece que tem alguém passando na cozinha.</blockquote>
+        <figcaption><b>Marcos T.</b> hóspede há 1 ano</figcaption>
+      </figure>
+      <figure class="quote q-off reveal">
+        <svg viewBox="0 0 120 90"><rect width="120" height="90" fill="#457b9d"/><circle cx="60" cy="48" r="24" fill="#e8c9ac"/><path d="M38 42q2-18 22-20t22 20q-22-10-44 0Z" fill="#d9d6ca"/><g class="pupils"><circle cx="52" cy="48" r="3"/><circle cx="68" cy="48" r="3"/></g><path d="M52 61h16" stroke="#1d3557" stroke-width="2.5" stroke-linecap="round"/><g class="behind" fill="#f1faee"><circle cx="97" cy="30" r="1.6"/><circle cx="105" cy="30" r="1.6"/></g></svg>
+        <blockquote>Eu moro sozinho. Acordei com a xícara ainda quente.</blockquote>
+        <figcaption><b>Seu Anselmo</b> hóspede há 19 noites</figcaption>
+      </figure>
+      <figure class="quote q-wrong reveal">
+        <svg viewBox="0 0 120 90"><rect width="120" height="90" fill="#0b1424"/><circle cx="60" cy="46" r="26" fill="#1d3557"/><g class="pupils" fill="#f1faee"><circle cx="50" cy="40" r="2"/><circle cx="70" cy="40" r="2"/></g><path d="M41 50q19 27 38 0-19 9-38 0Z" fill="#f1faee"/></svg>
+        <blockquote>não fui eu que escrevi isso &nbsp;não fui eu que escrevi isso &nbsp;não fui eu que escr</blockquote>
+        <figcaption><b class="name" data-fallback="[seu nome]"></b> hóspede desde as 3h33</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- 5 · CLAQUETES -->
+<section class="how" data-dread="0.4" data-tone="dark" data-reel="Rolo 2 · 1979">
+  <div class="wrap narrow">
+    <h2 class="reveal">Três tomadas para uma noite tranquila</h2>
+    <ol>
+      <li class="slate reveal"><div class="clap" aria-hidden="true"></div><div class="slate-body"><p class="slate-meta"><span>Cena 1</span><span>Tomada 1</span><span>Int. noite</span></p><h3>Ponha a água no fogo.</h3><p>E o celular na mesinha. Tela para cima, virado para a cama.</p></div></li>
+      <li class="slate reveal"><div class="clap" aria-hidden="true"></div><div class="slate-body"><p class="slate-meta"><span>Cena 2</span><span>Tomada 1</span><span>Int. noite</span></p><h3>Passe sem pressa.</h3><p>Respire devagar. Deixe o cheiro encher a casa.</p></div></li>
+      <li class="slate reveal" id="step3"><div class="clap" aria-hidden="true"></div><div class="slate-body"><p class="slate-meta"><span>Cena 3</span><span>Tomada 33</span><span>Int. noite</span></p><h3 class="swap" data-to="Não abra os olhos.">Beba e durma.</h3><p class="swap" data-to="Ela veio buscar a xícara.">É só isso.</p></div></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ════ ROLO 3 · 1985 ════ -->
+<section class="reelcard eighties" data-dread="0.5" data-tone="dark" data-reel="Rolo 3 · 1985">
+  <div class="card-in">
+    <div class="leader" aria-hidden="true"><b>3</b></div>
+    <p class="reel-kicker">Rolo três · 1985</p>
+    <p class="reel-title">A fita</p>
+  </div>
+</section>
+
+<!-- 6 · FITAS -->
+<section class="report" data-dread="0.55" data-tone="dark" data-reel="Rolo 3 · 1985">
+  <div class="horizon" aria-hidden="true"><i></i></div>
+  <div class="wrap narrow">
+    <h2 class="reveal neon glitch" data-alt="Sua noite, ela voltou">Sua noite, de volta</h2>
+    <p class="sub reveal">Isto é o que a gente gravou enquanto você estava fora.</p>
+    <div class="vcr reveal" aria-hidden="true">
+      <div class="cassette">
+        <svg viewBox="0 0 360 150"><rect width="360" height="150" rx="10" fill="#0b1424" stroke="#457b9d" stroke-width="2"/><rect x="24" y="14" width="312" height="62" rx="4" fill="#f1faee"/><rect x="24" y="50" width="312" height="9" fill="#e63946"/><rect x="24" y="61" width="312" height="6" fill="#457b9d"/><rect x="62" y="90" width="236" height="46" rx="8" fill="#1d3557"/><g class="reels" fill="none" stroke="#a8dadc" stroke-width="6" stroke-dasharray="9 6"><circle cx="106" cy="113" r="14"/><circle cx="254" cy="113" r="14"/></g><text x="38" y="40">QUARTO — NÃO REGRAVAR</text></svg>
+      </div>
+      <div class="slot-line"></div>
+    </div>
+    <div class="log">
+      <div class="log-head"><span>Ontem à noite · <span id="roomName">Seu quarto</span></span><span class="rec">REC</span></div>
+      <ol id="events">
+        <li class="reveal"><time>22:58</time><p>Chaleira no fogo</p><button type="button" class="play" data-sound="kettle" aria-label="Tocar a gravação das 22:58"></button></li>
+        <li class="reveal"><time>23:31</time><p>Você pegou no sono</p><button type="button" class="play" data-sound="breath" aria-label="Tocar a gravação das 23:31"></button></li>
+        <li class="reveal"><time>01:12</time><p>Assobio no meio do cafezal</p><button type="button" class="play" data-sound="whistle" aria-label="Tocar a gravação das 01:12"></button></li>
+        <li class="reveal warn"><time>02:47</time><p>Seu chinelo foi virado</p><button type="button" class="play" data-sound="thud" aria-label="Tocar a gravação das 02:47"></button></li>
+        <li class="reveal warn"><time>02:59</time><p>Porteira. Depois, a porta.</p><button type="button" class="play" data-sound="creak" aria-label="Tocar a gravação das 02:59"></button></li>
+        <li class="reveal warn"><time>03:04</time><p>Segunda respiração detectada</p><button type="button" class="play" data-sound="breath2" aria-label="Tocar a gravação das 03:04"></button></li>
+        <li class="reveal bad"><time>03:19</time><p>Sussurro a 4 cm do microfone:<br><em>“…<span class="name" data-fallback="psiu, acordou?"></span>…”</em><br>Você respondeu.</p><button type="button" class="play" data-sound="whisper" aria-label="Tocar a gravação das 03:19"></button></li>
+        <li class="reveal bad photo-row"><time>03:33</time><p>Uma luva preta pegou seu celular.<br>1 quadro gravado.</p><button type="button" class="view" id="viewPhoto" aria-expanded="false">Ver</button>
+          <div class="photo" id="photo"><div><canvas id="photoCanvas" width="600" height="450" role="img" aria-label="Quadro de fita VHS: um rosto sorrindo muito perto, meio tapado por uma luva de couro preta"></canvas></div></div>
+        </li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- 7 · INGRESSOS -->
+<section class="pricing" id="pricing" data-dread="0.68" data-tone="dark" data-reel="Rolo 3 · 1985">
+  <div class="wrap">
+    <h2 class="reveal neon glitch" data-alt="Escolha como ficar">Escolha como descansar</h2>
+    <p class="sub reveal">Troque de ingresso quando conseguir.</p>
+    <div class="plans">
+      <article class="plan reveal">
+        <div class="ticket">
+          <div class="ticket-body"><p class="admit">Sessão avulsa</p><h3>Amostra</h3><p class="price">R$&nbsp;0<small>/mês</small></p>
+            <ul><li>3 xícaras por mês</li><li>Fita semanal</li><li>Manhãs inclusas</li></ul></div>
+          <div class="stub"><button type="button" class="btn plan-btn" data-reply="Tarde demais para este.">Provar de graça</button><span>Nº 000147</span></div>
+        </div>
+      </article>
+      <article class="plan mid reveal">
+        <p class="badge">O mais levado</p>
+        <div class="ticket">
+          <div class="ticket-body"><p class="admit">Sessão da meia-noite</p><h3>Descanso</h3><p class="price">R$&nbsp;9,90<small>/noite</small></p>
+            <ul><li>Escuta sem limite</li><li>Aprende a sua voz</li><li>Algumas manhãs</li></ul></div>
+          <div class="stub"><button type="button" class="btn plan-btn" data-reply="Ela já tem a sua voz.">Passar agora</button><span>Nº 000333</span></div>
+        </div>
+      </article>
+      <article class="plan forever reveal">
+        <div class="ticket">
+          <div class="ticket-body"><p class="admit">Sessão sem fim</p><h3>Colo</h3><p class="price">você<small>/para sempre</small></p>
+            <ul><li>Noites sem limite</li><li>Nada de manhãs</li><li><s>Cancele quando quiser</s></li><li>Ela fica</li></ul></div>
+          <div class="stub"><button type="button" class="btn plan-btn" data-reply="Você aceitou às 3h33.">Assinatura ativa</button><span>Nº <i class="name" data-fallback="[seu nome]"></i></span></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 8 · ROTEIRO -->
+<section class="faq" id="faq" data-dread="0.76" data-tone="dark" data-reel="Rolo 3 · 1985">
+  <div class="wrap narrow">
+    <h2 class="reveal neon glitch" data-alt="Pedidos frequentes">Dúvidas frequentes</h2>
+    <div class="script reveal">
+      <p class="script-head">ÚLTIMO GOLE — ROTEIRO — PÁG. 33</p>
+      <div class="qa"><button type="button" aria-expanded="false">Como eu cancelo?</button><div class="answer"><div><p>Em Ajustes, depois Assinatura. O cancelamento vale a partir do nascer do sol. <span class="red">Seu ingresso não inclui sol.</span></p></div></div></div>
+      <div class="qa"><button type="button" aria-expanded="false">O café é mesmo sem cafeína?</button><div class="answer"><div><p>Sem nada de cafeína. <span class="red">Você não dorme por outro motivo.</span></p></div></div></div>
+      <div class="qa"><button type="button" aria-expanded="false">Quem pode ouvir minhas gravações?</button><div class="answer"><div><p>Só você. <span class="red">E quem aparece nelas.</span></p></div></div></div>
+      <div class="qa"><button type="button" aria-expanded="false">Por que minha câmera estava ligada?</button><div class="answer"><div><p>O Último Gole nunca pede para usar a câmera. <span class="red">Ela não pediu.</span></p></div></div></div>
+      <div class="qa"><button type="button" aria-expanded="false">Tem alguém na minha cozinha?</button><div class="answer"><div><p>Na cozinha, não. <span class="red">Ela já está no corredor.</span></p></div></div></div>
+    </div>
+    <div class="qa reveal last"><button type="button" aria-expanded="false">por que você ainda está descendo</button><div class="answer"><div><p class="red">ela gosta quando você chega perto</p></div></div></div>
+  </div>
+</section>
+
+<!-- 9 · CELEIRO -->
+<section class="dark" id="dark" data-dread="0.85" data-tone="black" data-reel="Último rolo">
+  <div class="dark-stick">
+    <div class="wall" id="wall" aria-label="Frases riscadas na parede de um celeiro escuro">
+      <p class="s s1">ela te ouviu</p>
+      <p class="s s2">NÃO ACEITA A XÍCARA</p>
+      <p class="s s3 name" data-fallback="a gente te conhece"></p>
+      <p class="s s4">para de descer</p>
+      <p class="s s5">ela só anda quando você não olha</p>
+      <p class="s s6">3h33 &nbsp;3h33 &nbsp;3h33</p>
+      <p class="s s7">sorria de volta sorria de volta<br>sorria de volta sorria de vo</p>
+      <p class="s s8">o café tá esfriando</p>
+      <p class="s s9">卌 卌 卌 卌 ||</p>
+      <p class="s s10">desvira o chinelo</p>
+      <p class="s s11">se chamar, não responde</p>
+      <svg class="hand h1" viewBox="0 0 100 130" aria-hidden="true"><use href="#handShape"/></svg>
+      <svg class="hand h2" viewBox="0 0 100 130" aria-hidden="true"><use href="#handShape"/></svg>
+      <svg class="hand h3" viewBox="0 0 100 130" aria-hidden="true"><use href="#handShape"/></svg>
+      <svg class="scarecrow" viewBox="0 0 160 260" aria-hidden="true"><path d="M76 96h8v164h-8ZM8 104l68-10h8l68 10-2 12-52-2 14 78-20-8-12 12-12-12-20 8 14-78-52 2Z"/><circle cx="80" cy="66" r="30"/><path d="M34 46h92l-8 9H42ZM56 48l8-34h32l8 34Z"/><path class="grin" d="M64 70q16 22 32 0q-16 8-32 0Z"/></svg>
+    </div>
+    <div class="beam" id="beam" aria-hidden="true"></div>
+    <div class="eyes" id="eyesA" aria-hidden="true"><i></i><i></i></div>
+    <div class="eyes small" id="eyesB" aria-hidden="true"><i></i><i></i></div>
+    <p class="dark-hint" id="darkHint">Acabou o querosene. Mexa para olhar o celeiro.</p>
+  </div>
+</section>
+
+<!-- 10 · FINAL -->
+<section class="finale" id="finale" data-dread="0.92" data-tone="black" data-reel="Último rolo">
+  <div class="finale-stick">
+    <canvas id="scene" role="img" aria-label="Seu quarto na fazenda, à noite, visto da cama. Alguém se aproxima."></canvas>
+    <p class="caption" id="caption" aria-live="polite"></p>
+    <p class="keep" id="keep">continue descendo</p>
+    <div class="end" id="end">
+      <p class="end-rec"><span class="rec">REC</span> <span id="endTimer">00:00:00</span> · 2 respirações no quarto</p>
+      <p class="fim" aria-hidden="true">Fim?</p>
+      <h2>Boa noite<span id="endName"></span>.</h2>
+      <p>Seu café está servido.</p>
+      <p id="endClock"></p>
+      <button type="button" class="btn" id="wake">Acordar</button>
+      <p class="end-fine">Último Gole é uma obra de ficção. Nada foi gravado.<br>Criado a partir de um prompt publicado por um usuário do&nbsp;X.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<div class="vignette" id="vignette" aria-hidden="true"></div>
+<div class="grain" id="grain" aria-hidden="true"></div>
+<div class="curtain" id="curtain" aria-hidden="true"></div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="handShape" viewBox="0 0 100 130">
+    <path d="M30 128C22 108 20 96 22 84C14 76 6 66 3 56c-1-6 5-8 9-3l14 17C24 54 18 30 17 17c0-8 8-8 10-1l12 44C39 40 39 18 41 7c1-8 10-8 10 1l2 52C57 40 62 22 66 13c3-7 11-4 9 4L66 64c6-10 14-20 20-23c6-2 9 3 5 9C82 64 76 76 74 90c-2 14-4 26-8 38c-12 4-26 3-36 0Z"/>
+  </symbol>
+</svg>
+
+<script src="js/audio.js"></script>
+<script src="js/face.js"></script>
+<script src="js/scene.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
