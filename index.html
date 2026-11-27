@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Coffee — prateleira de sites</title>
+<meta name="description" content="Sites criativos, passados na hora. Pegue um pacote da prateleira e experimente.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='16' fill='%23283618'/><ellipse cx='16' cy='16' rx='8' ry='11' fill='%23DDA15E' transform='rotate(35 16 16)'/><path d='M21 7C13 12 20 19 11 25' fill='none' stroke='%23283618' stroke-width='2.4' stroke-linecap='round'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=DM+Mono:wght@400;500&family=Instrument+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --olive: #606c38;
+    --forest: #283618;
+    --cream: #fefae0;
+    --sand: #dda15e;
+    --clay: #bc6c25;
+    --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+    --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+    --display: "Bricolage Grotesque", system-ui, sans-serif;
+    --mono: "DM Mono", ui-monospace, monospace;
+    --row: 580px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; background: var(--forest); }
+  body { font: 400 17px/1.55 "Instrument Sans", system-ui, sans-serif; color: var(--forest); background: var(--cream); overflow-x: clip; -webkit-font-smoothing: antialiased; }
+  .wrap { width: min(1120px, 100% - 40px); margin-inline: auto; }
+  h1, h2, h3 { font-family: var(--display); font-weight: 800; line-height: .98; letter-spacing: -.015em; font-variant-ligatures: none; text-wrap: balance; }
+  a { color: inherit; }
+  :focus-visible { outline: 3px solid var(--clay); outline-offset: 4px; }
+
+  /* ---------- top bar ---------- */
+  .top { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 22px 0; }
+  .logo { display: flex; align-items: center; gap: 10px; font: 800 1.5rem var(--display); font-variant-ligatures: none; text-decoration: none; }
+  .logo svg { width: 34px; height: 34px; transition: transform 300ms var(--ease-out); }
+  .quiet { font-weight: 600; font-size: .95rem; text-decoration: none; border-bottom: 2px solid var(--sand); padding-bottom: 1px; transition: border-color 150ms ease; }
+
+  /* ---------- hero ---------- */
+  .hero { display: grid; grid-template-columns: 1.1fr .9fr; align-items: center; gap: 32px; padding: 24px 0 40px; }
+  .hero h1 { font-size: clamp(3rem, 7.6vw, 6.2rem); }
+  .hero h1 em { font-style: normal; color: var(--clay); }
+  .hero p { text-wrap: balance; max-width: 27em; margin-top: 24px; font-size: 1.15rem; color: var(--olive); font-weight: 600; }
+  .btn { display: inline-flex; align-items: center; gap: 10px; margin-top: 32px; padding: 15px 28px; border-radius: 99px; background: var(--forest); color: var(--cream); font-weight: 600; text-decoration: none; transition: transform 160ms var(--ease-out), background-color 200ms ease; }
+  .btn svg { width: 16px; height: 16px; transition: transform 200ms var(--ease-out); }
+  .btn:active { transform: scale(.97); }
+
+  .brewer { justify-self: center; width: min(430px, 100%); background: none; border: 0; cursor: pointer; font: inherit; color: inherit; text-align: center; border-radius: 28px; transition: transform 160ms var(--ease-out); -webkit-tap-highlight-color: transparent; }
+  .brewer:active { transform: scale(.98); }
+  .brewer svg { display: block; width: 100%; height: auto; overflow: visible; }
+  .brewer small { display: block; font: 500 .8rem var(--mono); color: var(--olive); margin-top: 6px; }
+  .coffee { transform-box: fill-box; transform-origin: 50% 100%; transform: scaleY(.62); }
+  .drop { opacity: 0; }
+  .brewing .coffee { animation: fill 3.2s var(--ease-in-out) both; }
+  .brewing .drop { animation: drip 640ms cubic-bezier(.55, 0, 1, .6) 5; }
+  .brewing .drop.b { animation-delay: 320ms; }
+  @keyframes fill { from { transform: scaleY(.04); } to { transform: scaleY(.62); } }
+  @keyframes drip { 0% { opacity: 0; transform: translateY(-4px); } 15% { opacity: 1; } 100% { opacity: 1; transform: translateY(78px); } }
+  .steam path { fill: none; stroke: var(--olive); stroke-width: 7; stroke-linecap: round; opacity: 0; animation: steam 4.2s ease-in-out infinite; }
+  .steam path:nth-child(2) { animation-delay: -1.5s; }
+  .steam path:nth-child(3) { animation-delay: -2.9s; }
+  @keyframes steam { 0% { opacity: 0; transform: translateY(16px); } 45% { opacity: .45; } 100% { opacity: 0; transform: translateY(-26px); } }
+
+  /* ---------- the pour into the shelf ---------- */
+  .wave { display: block; width: 100%; height: 70px; fill: var(--forest); margin-bottom: -1px; }
+
+  /* ---------- shelf ---------- */
+  .pantry { position: relative; background: var(--forest); color: var(--cream); padding: 40px 0 70px; isolation: isolate; }
+  .pantry-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 12px 32px; margin-bottom: 24px; }
+  .pantry h2 { font-size: clamp(2.4rem, 5vw, 3.8rem); }
+  .stock { font: 400 .85rem var(--mono); color: var(--sand); }
+  .shelf { list-style: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr)); grid-auto-rows: var(--row);
+    background: repeating-linear-gradient(to bottom,
+      transparent 0 calc(var(--row) - 54px),
+      var(--sand) calc(var(--row) - 54px) calc(var(--row) - 44px),
+      var(--clay) calc(var(--row) - 44px) calc(var(--row) - 24px),
+      #00000055 calc(var(--row) - 24px),
+      transparent calc(var(--row) - 4px) var(--row)); }
+  .slot { display: flex; justify-content: center; align-items: flex-end; padding: 0 12px 54px; }
+  .js .slot { opacity: 0; transform: translateY(-28px); transition: opacity 500ms var(--ease-out), transform 500ms var(--ease-out); }
+  .js .slot.in { opacity: 1; transform: none; }
+
+  /* A bag with real depth: front and side panels turning in 3D. */
+  .bag { display: block; width: min(286px, 100% - 24px); height: 470px; perspective: 1100px; text-decoration: none; color: var(--forest); border-radius: 14px; }
+  .bag:focus-visible { outline-color: var(--cream); outline-offset: 10px; }
+  .box { position: relative; width: 100%; height: 100%; transform-style: preserve-3d; transform-origin: 50% 100%; transform: rotateY(-21deg); }
+  .face { position: absolute; inset: 0; display: flex; flex-direction: column; }
+  .crimp { height: 40px; margin: 0 6px; border-radius: 6px 6px 0 0; background: repeating-linear-gradient(90deg, transparent 0 8px, #28361830 8px 9px), var(--paper); filter: brightness(.88); }
+  .paper { flex: 1; display: flex; flex-direction: column; padding: 16px; border-radius: 4px 4px 12px 12px; background: linear-gradient(100deg, #0000001c, #ffffff22 24%, transparent 58%, #00000022), var(--paper); }
+  .side { position: absolute; top: 40px; bottom: 0; left: 100%; width: 58px; transform-origin: 0 50%; transform: rotateY(90deg); background: linear-gradient(90deg, #00000040, #00000070), var(--paper); border-radius: 0 6px 6px 0; }
+  .shadow { position: absolute; left: 2%; right: -8%; bottom: -8px; height: 20px; border-radius: 50%; background: radial-gradient(closest-side, #000a, transparent); transform: translateZ(-30px); }
+  .valve { position: absolute; top: 52px; right: 26px; width: 18px; height: 18px; border-radius: 50%; background: radial-gradient(circle, var(--forest) 0 2px, transparent 3px), #00000022; z-index: 1; }
+  .label { flex: 1; display: flex; flex-direction: column; gap: 10px; padding: 14px; border-radius: 8px; background: var(--cream); }
+  .art { display: block; width: 100%; height: 120px; flex: none; border-radius: 4px; }
+  .label h3 { font-size: 2rem; }
+  .label p { font-size: .88rem; line-height: 1.45; }
+  .facts { margin-top: auto; font: 400 .72rem/1.4 var(--mono); border-top: 1.5px solid var(--forest); }
+  .facts div { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 5px 0; border-bottom: 1px solid #28361826; }
+  .facts dt { color: var(--olive); }
+  .facts dd { text-align: right; font-weight: 500; }
+  .roast { display: flex; gap: 3px; }
+  .roast i { width: 8px; height: 12px; border-radius: 50%; background: var(--forest); transform: rotate(30deg); }
+  .warn { font: 600 .75rem/1.35 "Instrument Sans", sans-serif; background: var(--clay); color: var(--cream); border-radius: 4px; padding: 6px 9px; }
+
+  /* Último Gole: dark roast. Look at it long enough and it looks back. */
+  .gole { --paper: var(--olive); }
+  .gole .eyes { opacity: 0; transition: opacity 200ms ease; }
+  .dusk { position: absolute; inset: 0; background: #0b1006; opacity: 0; pointer-events: none; z-index: -1; transition: opacity 250ms ease; }
+  .peek { position: absolute; right: 9%; top: 52px; display: flex; gap: 20px; opacity: 0; transition: opacity 150ms ease; pointer-events: none; }
+  .peek i { width: 9px; height: 6px; border-radius: 50%; background: var(--cream); box-shadow: 0 0 12px 3px #fefae088; }
+  .pantry.haunted .dusk { opacity: .72; transition: opacity 1200ms ease 300ms; }
+  .pantry.haunted .eyes { opacity: 1; transition: opacity 900ms ease 500ms; }
+  .pantry.haunted .peek { opacity: 1; transition: opacity 700ms ease 1500ms; }
+
+  /* the next one, still roasting */
+  .soon { position: relative; width: min(286px, 100% - 24px); height: 430px; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 12px; padding: 24px; text-align: center; font: inherit; color: var(--cream); background: #fefae008; border: 2px dashed #dda15e99; border-radius: 40px 40px 12px 12px; cursor: pointer; transition: transform 160ms var(--ease-out), background-color 200ms ease; }
+  .soon:active { transform: scale(.98); }
+  .soon svg { width: 84px; height: 84px; }
+  .soon .bean { transform-origin: 50% 50%; transform-box: fill-box; }
+  .soon strong { font: 800 1.7rem/1.05 var(--display); font-variant-ligatures: none; }
+  .soon span { font: 400 .82rem/1.5 var(--mono); color: var(--sand); min-height: 3em; }
+  .soon.shake .bean { animation: shake 520ms var(--ease-in-out); }
+  @keyframes shake { 20% { transform: rotate(-24deg) translateY(-8px); } 45% { transform: rotate(20deg); } 70% { transform: rotate(-10deg) translateY(-3px); } }
+
+  /* things that live on a coffee shelf */
+  .props { padding-inline: 12px; }
+  .props svg { width: min(300px, 100%); height: auto; display: block; }
+  .leaf { transform-box: view-box; transform-origin: 94px 190px; transition: transform 600ms var(--ease-out); }
+
+  /* ---------- footer ---------- */
+  footer { background: var(--sand); color: var(--forest); padding: 70px 0 44px; }
+  footer h2 { font-size: clamp(3.4rem, 14vw, 10rem); }
+  .foot-row { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 32px; margin-top: 36px; padding-top: 20px; border-top: 2px solid var(--forest); font-weight: 600; font-size: .95rem; }
+
+  @media (hover: hover) and (pointer: fine) {
+    .logo:hover svg { transform: rotate(60deg); }
+    .quiet:hover { border-color: var(--forest); }
+    .btn:hover { background: var(--olive); }
+    .btn:hover svg { transform: translateY(3px); }
+    .soon:hover { background: #fefae014; }
+    .props:hover .leaf { transform: rotate(5deg); }
+  }
+
+  @media (max-width: 860px) {
+    .hero { grid-template-columns: 1fr; text-align: center; padding-top: 8px; }
+    .hero p { margin-inline: auto; }
+    .brewer { width: min(330px, 100%); }
+  }
+  /* the plant and mug only appear when there is room for them beside the bags */
+  @media (max-width: 1059px) { .props { display: none; } }
+  @media (max-width: 420px) { :root { --row: 560px; } .peek { display: none; } }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .js .slot { transform: none; }
+    .box { transform: none; }
+    .brewing .coffee, .brewing .drop, .steam path, .soon.shake .bean { animation: none; }
+    .steam path { opacity: .35; }
+    .logo svg, .leaf, .btn svg { transition: none; }
+  }
+</style>
+</head>
+<body>
+
+<header class="wrap top">
+  <a class="logo" href="./">
+    <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="16" fill="#283618"/><ellipse cx="16" cy="16" rx="8" ry="11" fill="#dda15e" transform="rotate(35 16 16)"/><path d="M21 7C13 12 20 19 11 25" fill="none" stroke="#283618" stroke-width="2.4" stroke-linecap="round"/></svg>
+    Coffee
+  </a>
+  <a class="quiet" href="https://github.com/kalyanjulio/Coffee">Ver no GitHub</a>
+</header>
+
+<main>
+  <section class="wrap hero">
+    <div>
+      <h1>Sites criativos, <em>passados na hora.</em></h1>
+      <p>Cada pacote desta prateleira é um site para abrir, rolar e brincar. Escolha o seu.</p>
+      <a class="btn" href="#prateleira">Ir para a prateleira
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v11M3 9l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+
+    <button class="brewer brewing" id="brewer" type="button" aria-label="Passar mais um café">
+      <svg viewBox="0 0 400 440" aria-hidden="true">
+        <circle cx="200" cy="232" r="178" fill="#dda15e"/>
+        <g class="steam"><path d="M150 108c-22-22 18-34-2-62"/><path d="M200 96c-24-24 20-40-2-72"/><path d="M252 108c-22-22 18-34-2-62"/></g>
+        <!-- dripper -->
+        <path d="M110 120h180l-44 92h-92Z" fill="#bc6c25"/>
+        <path d="M128 120l36 84h14l-26-84Z" fill="#fefae0" opacity=".22"/>
+        <rect x="98" y="110" width="204" height="18" rx="9" fill="#283618"/>
+        <path d="M288 138c48-4 52 52-14 50" fill="none" stroke="#bc6c25" stroke-width="15" stroke-linecap="round"/>
+        <rect x="132" y="210" width="136" height="16" rx="8" fill="#283618"/>
+        <!-- glass server -->
+        <path d="M146 232h108v20c34 18 50 48 50 82 0 46-30 66-60 66h-88c-30 0-60-20-60-66 0-34 16-64 50-82Z" fill="#fefae0" opacity=".78"/>
+        <clipPath id="glass"><path d="M146 232h108v20c34 18 50 48 50 82 0 46-30 66-60 66h-88c-30 0-60-20-60-66 0-34 16-64 50-82Z"/></clipPath>
+        <g clip-path="url(#glass)">
+          <g class="coffee">
+            <rect x="90" y="236" width="220" height="168" fill="#283618"/>
+            <rect x="90" y="236" width="220" height="12" fill="#606c38"/>
+          </g>
+        </g>
+        <path d="M146 232h108v20c34 18 50 48 50 82 0 46-30 66-60 66h-88c-30 0-60-20-60-66 0-34 16-64 50-82Z" fill="none" stroke="#283618" stroke-width="7" stroke-linejoin="round"/>
+        <path d="M121 318c3-20 14-35 28-44" fill="none" stroke="#fff" stroke-width="9" stroke-linecap="round" opacity=".7"/>
+        <ellipse class="drop a" cx="200" cy="236" rx="5" ry="9" fill="#283618"/>
+        <ellipse class="drop b" cx="200" cy="236" rx="4" ry="7" fill="#283618"/>
+        <rect x="84" y="404" width="232" height="14" rx="7" fill="#283618"/>
+      </svg>
+      <small>toque para passar mais um</small>
+    </button>
+  </section>
+
+  <svg class="wave" viewBox="0 0 1440 70" preserveAspectRatio="none" aria-hidden="true"><path d="M0 38C180 4 340 4 540 32s360 40 560 8 260-30 340-14v44H0Z"/></svg>
+
+  <section class="pantry" id="prateleira">
+    <div class="dusk" aria-hidden="true"></div>
+    <div class="peek" aria-hidden="true"><i></i><i></i></div>
+    <div class="wrap">
+      <div class="pantry-head">
+        <h2>Na prateleira</h2>
+        <p class="stock" id="stock">1 pacote pronto · 1 torrando</p>
+      </div>
+
+      <ul class="shelf">
+        <!-- Para um site novo: crie uma pasta com o index.html dele, copie um <li> de pacote e troque o link, a arte e a ficha. A contagem se atualiza sozinha. -->
+        <li class="slot">
+          <a class="bag gole" href="ultimo-gole/index.html" data-haunted>
+            <div class="box">
+              <div class="shadow" aria-hidden="true"></div>
+              <div class="side" aria-hidden="true"></div>
+              <div class="face">
+                <div class="crimp" aria-hidden="true"></div>
+                <div class="paper">
+                  <div class="label">
+                    <svg class="art" viewBox="0 0 220 120" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+                      <rect width="220" height="120" fill="#283618"/>
+                      <circle cx="170" cy="32" r="16" fill="#fefae0"/>
+                      <path d="M0 82Q50 42 106 76T220 62v58H0Z" fill="#606c38"/>
+                      <path d="M0 102Q66 70 134 98t86-8v30H0Z" fill="#0b1006"/>
+                      <g class="eyes" fill="#fefae0"><circle cx="58" cy="102" r="2.6"/><circle cx="72" cy="102" r="2.6"/></g>
+                    </svg>
+                    <h3>Último Gole</h3>
+                    <p>Um site de café para dormir que vai ficando errado conforme você desce a página.</p>
+                    <dl class="facts">
+                      <div><dt>Torra</dt><dd><span class="roast" role="img" aria-label="muito escura, 5 de 5"><i></i><i></i><i></i><i></i><i></i></span></dd></div>
+                      <div><dt>Notas</dt><dd>chaleira, chinelo, 3h33</dd></div>
+                      <div><dt>Origem</dt><dd>prompt de alguém do X</dd></div>
+                    </dl>
+                    <p class="warn">Terror. Tem susto e grito alto.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </li>
+
+        <li class="slot">
+          <button class="soon" id="soon" type="button">
+            <svg viewBox="0 0 80 80" aria-hidden="true"><g class="bean"><ellipse cx="40" cy="40" rx="21" ry="29" fill="#dda15e" transform="rotate(35 40 40)"/><path d="M53 17C31 31 50 47 27 63" fill="none" stroke="#283618" stroke-width="5" stroke-linecap="round"/></g></svg>
+            <strong>Próximo site</strong>
+            <span id="soonText" aria-live="polite">ainda torrando</span>
+          </button>
+        </li>
+
+        <li class="slot props" aria-hidden="true">
+          <svg viewBox="0 0 300 300">
+            <!-- plant -->
+            <g class="leaf" fill="#606c38">
+              <path d="M94 192C60 168 28 160 18 122c38-4 70 24 76 70Z"/>
+              <path d="M96 190C70 138 70 94 96 58c30 36 28 88 0 132Z"/>
+              <path d="M98 192c10-52 42-76 82-74-6 40-42 66-82 74Z"/>
+              <path d="M96 190V92M94 192 46 142M98 192l52-48" stroke="#283618" stroke-width="3" fill="none" stroke-linecap="round"/>
+            </g>
+            <path d="M52 188h88l-12 112H64Z" fill="#bc6c25"/>
+            <rect x="44" y="184" width="104" height="22" rx="5" fill="#dda15e"/>
+            <!-- mug -->
+            <path d="M258 240c34-4 34 42-4 38" fill="none" stroke="#fefae0" stroke-width="10" stroke-linecap="round"/>
+            <path d="M178 224h84v54c0 14-10 22-22 22h-40c-12 0-22-8-22-22Z" fill="#fefae0"/>
+            <rect x="178" y="248" width="84" height="16" fill="#bc6c25"/>
+          </svg>
+        </li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <h2>Sirva-se.</h2>
+    <div class="foot-row">
+      <span>Sites feitos com a ajuda do Claude.</span>
+      <a href="https://github.com/kalyanjulio/Coffee">Código no GitHub</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(() => {
+  document.documentElement.classList.add('js');
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+  const fine = matchMedia('(hover: hover) and (pointer: fine)');
+
+  /* bags drop onto the shelf when it comes into view */
+  const io = new IntersectionObserver(entries => {
+    entries.filter(e => e.isIntersecting).forEach((e, i) => {
+      e.target.style.transitionDelay = `${[0, 70, 120][Math.min(i, 2)]}ms`;
+      e.target.classList.add('in');
+      io.unobserve(e.target);
+    });
+  }, { threshold: .15 });
+  document.querySelectorAll('.slot').forEach(el => io.observe(el));
+
+  /* stock count */
+  const ready = document.querySelectorAll('.bag').length;
+  document.getElementById('stock').textContent = `${ready} ${ready === 1 ? 'pacote pronto' : 'pacotes prontos'} · 1 torrando`;
+
+  /* brew again */
+  const brewer = document.getElementById('brewer');
+  brewer.addEventListener('click', () => {
+    brewer.classList.remove('brewing');
+    void brewer.offsetWidth;            // restart the keyframes
+    brewer.classList.add('brewing');
+  });
+
+  /* the bag turns toward the pointer, on a spring */
+  document.querySelectorAll('.bag').forEach(bag => {
+    const box = bag.querySelector('.box');
+    const rest = { x: 0, y: -21, lift: 0 };
+    const now = { ...rest }, goal = { ...rest }, speed = { x: 0, y: 0, lift: 0 };
+    let frame = 0;
+    const step = () => {
+      let moving = false;
+      for (const k in now) {
+        speed[k] = (speed[k] + (goal[k] - now[k]) * .09) * .76;
+        now[k] += speed[k];
+        if (Math.abs(speed[k]) > .01 || Math.abs(goal[k] - now[k]) > .05) moving = true;
+      }
+      box.style.transform = `translateY(${now.lift}px) rotateX(${now.x}deg) rotateY(${now.y}deg)`;
+      frame = moving ? requestAnimationFrame(step) : 0;
+    };
+    const aim = values => { Object.assign(goal, values); if (!frame) frame = requestAnimationFrame(step); };
+    bag.addEventListener('pointermove', e => {
+      if (reduced.matches || !fine.matches) return;
+      const r = bag.getBoundingClientRect();
+      const x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
+      aim({ x: -y * 9, y: x * 22, lift: -16 });
+    });
+    bag.addEventListener('pointerleave', () => { if (!reduced.matches) aim(rest); });
+  });
+
+  /* some bags dim the lights */
+  const pantry = document.getElementById('prateleira');
+  document.querySelectorAll('[data-haunted]').forEach(el => {
+    const on = () => pantry.classList.add('haunted'), off = () => pantry.classList.remove('haunted');
+    el.addEventListener('pointerenter', e => { if (e.pointerType === 'mouse') on(); });
+    el.addEventListener('pointerleave', off);
+    el.addEventListener('focus', () => { if (el.matches(':focus-visible')) on(); });
+    el.addEventListener('blur', off);
+  });
+
+  /* the unfinished bag answers back */
+  const soon = document.getElementById('soon'), soonText = document.getElementById('soonText');
+  const replies = ['ainda no forno', 'torra lenta, sabor melhor', 'quase lá… ou não', 'volte amanhã'];
+  let turn = 0;
+  soon.addEventListener('click', () => {
+    soonText.textContent = replies[turn++ % replies.length];
+    soon.classList.remove('shake');
+    void soon.offsetWidth;
+    soon.classList.add('shake');
+  });
+})();
+</script>
+</body>
+</html>
