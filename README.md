@@ -14,4 +14,4 @@ Uma prateleira de sites criativos. Pegue um e experimente.
 
 ## Créditos
 
-O Último Gole foi criado a partir de um prompt publicado por um usuário do X (antigo Twitter).
+A ideia do site "Último Gole" veio de um prompt publicado por um usuário do X (antigo Twitter).
